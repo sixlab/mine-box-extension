@@ -1,0 +1,29 @@
+
+#labChromeExtTabContent {
+    width: 1000px;
+    min-height: 600px;
+    margin: 50px auto;
+    padding-bottom: 58px;
+    background-color: #DDDDDD;
+    border-radius: 10px;
+}
+
+.labChromeExtTabItem{
+    clear: both;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.labChromeExtTabItemImg,.labChromeExtTabItemDesc{
+    float: left;
+    height: 48px;
+}
+
+.labChromeExtTabItemImg img{
+    width: 48px;
+    height: 48px;
+}
+
+.labChromeExtTabItemDesc{
+    overflow-y: scroll;
+}

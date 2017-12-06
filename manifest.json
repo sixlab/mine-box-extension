@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Mine Extension",
+  "description": "Numberian's Extension",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": {
+      "32": "img/favicon32.png",
+      "64": "img/favicon64.png",
+      "128": "img/favicon128.png"
+    },
+    "default_title": "扩展管理",
+    "default_popup": "html/popup.html"
+  },
+  "options_page": "html/options.html",
+  "permissions": [
+    "https://api.sixlab.cn/",
+    "management",
+    "tabs",
+    "activeTab",
+    "notifications",
+    "storage",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "css/main.css",
+        "font/iconfont.css"
+      ],
+      "js": [
+        "lib/jquery-3.2.1.min.js",
+        "lib/qrcode.min.js",
+        "js/content.js",
+        "lib/drag.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "description": "管理扩展",
+  "enabled": true,
+  "homepageUrl": "",
+  "hostPermissions": [
+    "",
+    "chrome://favicon/*",
+    "https://api.sixlab.cn/*"
+  ],
+  "id": "obcbbgedochbnkomggljnefmmdllcbhg",
+  "installType": "development",
+  "isApp": false,
+  "mayDisable": true,
+  "name": "扩展管理",
+  "offlineEnabled": false,
+  "optionsUrl": "chrome-extension://obcbbgedochbnkomggljnefmmdllcbhg/html/options.html",
+  "permissions": [
+    "activeTab",
+    "management",
+    "notifications",
+    "storage",
+    "tabs"
+  ],
+  "shortName": "扩展管理",
+  "type": "extension",
+  "version": "1.0"
+}

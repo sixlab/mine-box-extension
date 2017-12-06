@@ -1,0 +1,64 @@
+
+#me-switch {
+    background-color: #1199FF;
+    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+    font-size: 60px;
+    color: white;
+}
+
+#me-content {
+    background-color: #1199FF;
+    border-radius: 5px;
+    display: none;
+    width: 256px;
+    height: 256px;
+    padding: 15px 10px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    overflow: hidden;
+    z-index: 2000000;
+}
+
+#me-sudoku {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgb(52, 73, 94);
+    width: 300px;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+#me-sudoku .iconfont{
+    font-size: 40px;
+    line-height: 70px;
+}
+
+.me-sudoku-item {
+    display: block;
+    color: rgb(255, 255, 255);
+    float: left;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.me-sudoku-item a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.me-sudoku-item:hover {
+    background: #1199FF
+}
