@@ -10,9 +10,9 @@ $(function () {
         "        <div><i class='iconfont icon-erweima-copy'></i></div>" +
         "        <div>知乎图片</div>" +
         "        </a></li>" +
-        "    <li class='me-sudoku-item'>" +
+        "    <li class='me-sudoku-item' id='me-send-msg'>" +
         "        <div><i class='iconfont icon-daikaifa'></i></div>" +
-        "        <div>settings</div>" +
+        "        <div>发消息</div>" +
         "    </li>" +
         "    <li class='me-sudoku-item'>" +
         "        <div><i class='iconfont icon-daikaifa'></i></div>" +
@@ -39,6 +39,24 @@ $(function () {
         "        <div>Exit</div>" +
         "    </li>" +
         "</ul>");
+
+    function sendMsgBack(topic, message, callback) {
+        // 给 back 的 chrome.runtime.onMessage.addListener 发送消息
+        chrome.runtime.sendMessage({
+            topic: topic,
+            message: message
+        }, function (response) {
+            callback(response);
+        });
+    }
+
+    //接受其他地方发送来的消息
+    chrome.extension.onMessage.addListener(
+        function (request, sender, sendResponse) {
+            console.log("content ext", request);
+            sendResponse("from content");
+        }
+    );
 
     // 悬浮球拖拽
     !function () {
@@ -129,13 +147,20 @@ $(function () {
         }
 
         $(".me-sudoku-item").on("click", function () {
-            debugger;
             if (this.id === "me-show-Qr") {
                 showQr();
             }
 
             if (this.id === "me-zhihu-img") {
                 showZhihuImg();
+            }
+
+            if (this.id === "me-send-msg") {
+                sendMsgBack("btn03", {
+                    type: "book"
+                }, function (resp) {
+                    
+                });
             }
 
             $("#me-sudoku").hide();

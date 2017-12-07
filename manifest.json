@@ -17,6 +17,7 @@
     "https://api.sixlab.cn/",
     "management",
     "tabs",
+    "bookmarks",
     "activeTab",
     "notifications",
     "storage",
