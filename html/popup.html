@@ -1,12 +1,174 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <link href='../css/popup.css' rel='stylesheet' />
+    <link href='../lib/tabh.css' rel='stylesheet' />
+    <link href='../lib/tabv.css' rel='stylesheet' />
+
     <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript" src="../lib/list.min.js"></script>
+
+    <script type="text/javascript" src="../lib/qrcode.min.js"></script>
+
     <script type="text/javascript" src="../js/popup.js"></script>
 </head>
 <body>
-222222
+
+<div class="tabh">
+    <input type="radio" id="tab1" name="tab-control" checked>
+    <input type="radio" id="tab2" name="tab-control">
+    <input type="radio" id="tab3" name="tab-control">
+    <input type="radio" id="tab4" name="tab-control">
+    <ul class="tabh-ul">
+        <li title="Features"><label for="tab1" role="button">
+
+            <svg viewBox="0 0 24 24">
+                <rect width='24' height='24' />
+                <g transform='rotate(67.5)'>
+                    <rect y="-20" width='12' height='50' fill='#333' />
+                </g>
+                <path d='M3 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#fff'
+                      stroke-width='2' />
+            </svg>
+
+            <br><span>工具</span></label></li>
+        <li title="Delivery Contents"><label for="tab2" role="button">
+            <svg viewBox="0 0 24 24">
+                <rect width='24' height='24' />
+                <g transform='rotate(67.5)'>
+                    <rect y="-25" width='13' height='50' fill='#333' />
+                </g>
+                <path d='M3 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#fff'
+                      stroke-width='2' />
+
+                <path d='M3 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#fff'
+                      stroke-width='2' />
+            </svg>
+            <br><span>Delivery Contents</span></label></li>
+        <li title="Shipping"><label for="tab3" role="button">
+            <svg viewBox="0 0 24 24">
+                <rect width='24' height='24' fill="#333" />
+                <g transform='rotate(67.5)'>
+                    <rect y="-25" width='13' height='50' />
+                </g>
+                <path d='M3 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#fff'
+                      stroke-width='2' />
+
+                <path d='M3 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#fff'
+                      stroke-width='2' />
+            </svg>
+            <br><span>Shipping</span></label></li>
+        <li title="Returns"><label for="tab4" role="button">
+            <svg viewBox="0 0 24 24">
+                <rect width='24' height='24' />
+                <path d='M3 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='#fff'
+                      stroke-width='2' />
+                <path d='M3 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='#fff'
+                      stroke-width='2' />
+            </svg>
+            <br><span>设置</span></label></li>
+    </ul>
+
+    <div class="slider">
+        <div class="indicator"></div>
+    </div>
+    <div class="content">
+        <section>
+            <div class="container">
+                <nav class="left-menu">
+                    <ul class="mcd-menu">
+                        <li><a href="###" class="active"> <i class="fa fa-home"></i> <strong>二维码</strong>
+                            <small>当前页面的二维码</small>
+                        </a></li>
+
+                        <li><a href="###"> <i class="fa fa-edit"></i> <strong>About us</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###"> <i class="fa fa-gift"></i> <strong>Features</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###"> <i class="fa fa-globe"></i> <strong>News</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###"> <i class="fa fa-comments-o"></i> <strong>Blog</strong>
+                            <small>what they say</small>
+                        </a>
+                            <ul>
+                                <li><a href="###"><i class="fa fa-globe"></i>Mission</a></li>
+                                <li><a href="###"><i class="fa fa-group"></i>Our Team</a>
+                                    <ul>
+                                        <li><a href="###"><i class="fa fa-female"></i>Leyla Sparks</a></li>
+                                        <li><a href="###"><i class="fa fa-male"></i>Gleb Ismailov</a>
+                                            <ul>
+                                                <li><a href="###"><i class="fa fa-leaf"></i>About</a></li>
+                                                <li><a href="###"><i class="fa fa-tasks"></i>Skills</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="###"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="###"><i class="fa fa-trophy"></i>Rewards</a></li>
+                                <li><a href="###"><i class="fa fa-certificate"></i>Certificates</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="###"> <i class="fa fa-picture-o"></i> <strong>Portfolio</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###"> <i class="fa fa-envelope-o"></i> <strong>Contacts</strong>
+                            <small>drop a line</small>
+                        </a></li>
+
+                        <!--<li class="float"><a class="search">-->
+                            <!--<input type="text" value="search ...">-->
+                            <!--<button><i class="fa fa-search"></i></button>-->
+                        <!--</a> <a href="###" class="search-mobile"> <i class="fa fa-search"></i> </a></li>-->
+                    </ul>
+                </nav>
+
+                <div class="right-content" id="tab1-content">
+
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Delivery Contents</h2>
+            dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
+            dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
+            dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
+            dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
+
+        </section>
+        <section>
+            <h2>Shipping</h2>
+            imperdiet doming id quod mazim placerat facer possim assum.
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+            laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+            vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+            dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
+        </section>
+        <section>
+            <h2>Returns</h2>
+            in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+            laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+            vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor
+            dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
+            imperdiet doming id quod mazim placerat facer possim assum.
+        </section>
+    </div>
+</div>
+
 </body>
 </html>

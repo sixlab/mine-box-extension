@@ -1,0 +1,32 @@
+html {
+    width: 800px;
+}
+
+body {
+    width: 800px;
+    color: #333;
+    font-family: "Raleway";
+}
+
+body h1 {
+    text-align: center;
+    color: #428BFF;
+    font-weight: 300;
+    padding: 40px 0 20px 0;
+    margin: 0;
+}
+
+.left-menu{
+    display: inline-block;
+    vertical-align: top;
+    height: 440px;
+}
+
+.right-content{
+    display: inline-block;
+    vertical-align: top;
+    height: 440px;
+    width: 520px;
+    background-color: #FFF;
+    overflow: scroll;
+}

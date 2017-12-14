@@ -1,19 +1,15 @@
 $(function () {
-    $("body").text("pop");
-    chrome.management.getAll(function (apps) {
-        $("body").text(apps.length+">"+JSON.stringify(apps));
-    });
-    
-    
     chrome.tabs.query({
         active: true,
         currentWindow: true
     }, function (tabs) {
-        chrome.tabs.sendMessage(tabs[0].id, {
-            greeting: "hello"
-        }, function (respone) {
-            console.log(respone)
-        });
+        let content = $("#tab1-content");
+        let img = $("<div/>");
+        content.append(img);
+        let url = tabs[0].url;
+        new QRCode(img[0], url);
+        content.append($("<div/>").text("标题："+tabs[0].title));
+        content.append($("<div/>").text(JSON.stringify(tabs[0])));
     });
 });
 
