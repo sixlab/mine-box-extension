@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" xmlns:me="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -10,9 +10,8 @@
 
     <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
 
-    <script type="text/javascript" src="../lib/list.min.js"></script>
-
     <script type="text/javascript" src="../lib/qrcode.min.js"></script>
+    <script type="text/javascript" src="../lib/tabv.js"></script>
 
     <script type="text/javascript" src="../js/popup.js"></script>
 </head>
@@ -77,60 +76,72 @@
         <div class="indicator"></div>
     </div>
     <div class="content">
-        <section>
+        <section class="me-section" me:section="tab1">
             <div class="container">
                 <nav class="left-menu">
                     <ul class="mcd-menu">
-                        <li><a href="###" class="active"> <i class="fa fa-home"></i> <strong>二维码</strong>
+                        <li><a href="###" me:fun="qrCode" class="mcd-a active"> <i class="fa fa-home"></i> <strong>二维码</strong>
                             <small>当前页面的二维码</small>
                         </a></li>
 
-                        <li><a href="###"> <i class="fa fa-edit"></i> <strong>About us</strong>
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-edit"></i> <strong>About us</strong>
                             <small>sweet home</small>
                         </a></li>
 
-                        <li><a href="###"> <i class="fa fa-gift"></i> <strong>Features</strong>
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-edit"></i> <strong>About us</strong>
                             <small>sweet home</small>
                         </a></li>
 
-                        <li><a href="###"> <i class="fa fa-globe"></i> <strong>News</strong>
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-edit"></i> <strong>About us</strong>
                             <small>sweet home</small>
                         </a></li>
 
-                        <li><a href="###"> <i class="fa fa-comments-o"></i> <strong>Blog</strong>
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-edit"></i> <strong>About us</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-gift"></i> <strong>Features</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-globe"></i> <strong>News</strong>
+                            <small>sweet home</small>
+                        </a></li>
+
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-comments-o"></i> <strong>Blog</strong>
                             <small>what they say</small>
                         </a>
-                            <ul>
-                                <li><a href="###"><i class="fa fa-globe"></i>Mission</a></li>
-                                <li><a href="###"><i class="fa fa-group"></i>Our Team</a>
-                                    <ul>
-                                        <li><a href="###"><i class="fa fa-female"></i>Leyla Sparks</a></li>
-                                        <li><a href="###"><i class="fa fa-male"></i>Gleb Ismailov</a>
-                                            <ul>
-                                                <li><a href="###"><i class="fa fa-leaf"></i>About</a></li>
-                                                <li><a href="###"><i class="fa fa-tasks"></i>Skills</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="###"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="###"><i class="fa fa-trophy"></i>Rewards</a></li>
-                                <li><a href="###"><i class="fa fa-certificate"></i>Certificates</a></li>
-                            </ul>
+                            <!--<ul>-->
+                                <!--<li><a href="###" class="mcd-a"><i class="fa fa-globe"></i>Mission</a></li>-->
+                                <!--<li><a href="###" class="mcd-a"><i class="fa fa-group"></i>Our Team</a>-->
+                                    <!--<ul>-->
+                                        <!--<li><a href="###" class="mcd-a"><i class="fa fa-female"></i>Leyla Sparks</a></li>-->
+                                        <!--<li><a href="###" class="mcd-a"><i class="fa fa-male"></i>Gleb Ismailov</a>-->
+                                            <!--<ul>-->
+                                                <!--<li><a href="###" class="mcd-a"><i class="fa fa-leaf"></i>About</a></li>-->
+                                                <!--<li><a href="###" class="mcd-a"><i class="fa fa-tasks"></i>Skills</a></li>-->
+                                            <!--</ul>-->
+                                        <!--</li>-->
+                                        <!--<li><a href="###" class="mcd-a"><i class="fa fa-female"></i>Viktoria Gibbers</a></li>-->
+                                    <!--</ul>-->
+                                <!--</li>-->
+                                <!--<li><a href="###" class="mcd-a"><i class="fa fa-trophy"></i>Rewards</a></li>-->
+                                <!--<li><a href="###" class="mcd-a"><i class="fa fa-certificate"></i>Certificates</a></li>-->
+                            <!--</ul>-->
                         </li>
 
-                        <li><a href="###"> <i class="fa fa-picture-o"></i> <strong>Portfolio</strong>
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-picture-o"></i> <strong>Portfolio</strong>
                             <small>sweet home</small>
                         </a></li>
 
-                        <li><a href="###"> <i class="fa fa-envelope-o"></i> <strong>Contacts</strong>
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-envelope-o"></i> <strong>Contacts</strong>
                             <small>drop a line</small>
                         </a></li>
 
                         <!--<li class="float"><a class="search">-->
                             <!--<input type="text" value="search ...">-->
                             <!--<button><i class="fa fa-search"></i></button>-->
-                        <!--</a> <a href="###" class="search-mobile"> <i class="fa fa-search"></i> </a></li>-->
+                        <!--</a> <a href="###" class="mcd-a" class="search-mobile"> <i class="fa fa-search"></i> </a></li>-->
                     </ul>
                 </nav>
 
@@ -139,7 +150,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="me-section" me:section="tab2">
             <h2>Delivery Contents</h2>
             dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
             dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
@@ -147,7 +158,7 @@
             dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
 
         </section>
-        <section>
+        <section class="me-section" me:section="tab3">
             <h2>Shipping</h2>
             imperdiet doming id quod mazim placerat facer possim assum.
             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -157,7 +168,7 @@
             vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
             dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil
         </section>
-        <section>
+        <section class="t4 me-section" me:section="tab4">
             <h2>Returns</h2>
             in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at
             laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
