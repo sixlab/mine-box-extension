@@ -15,6 +15,37 @@ $(function () {
             content.append($("<div/>").text(JSON.stringify(tabs[0])));
         });
     };
+
+    meFun.qrText = function () {
+        let content = $("#tab1-content");
+        content.html("");
+
+        let input = $("<input/>");
+        let btn = $("<button>生成二维码</button>");
+        let img = $("<div/>");
+
+        content.append(input);
+        content.append(btn);
+        content.append(img);
+
+        btn.click(function(){
+            let text = input.val();
+
+            new QRCode(img[0], text);
+        });
+    };
+
+    meFun.qrCode();
+
+    $("#page").click(function () {
+        var id = chrome.i18n.getMessage("@@extension_id");
+        window.open("chrome-extension://" + id + "/index.html");
+    });
+
+    $("#setting").click(function () {
+        var id = chrome.i18n.getMessage("@@extension_id");
+        window.open("chrome-extension://" + id + "/html/options.html");
+    });
 });
 
 chrome.extension.onMessage.addListener(
