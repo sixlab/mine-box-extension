@@ -159,7 +159,7 @@ $(function () {
                 sendMsgBack("btn03", {
                     type: "book"
                 }, function (resp) {
-                    
+                    console.log(resp)
                 });
             }
 
@@ -167,4 +167,23 @@ $(function () {
         });
     }();
 
+    // readfree
+    !function () {
+        sendMsgBack("readfree", {
+            type: "daily"
+        }, function (resp) {
+            if(! resp.success){
+                let result = confirm("今天 readfree 还没有签到");
+                if(result){
+                    window.open("http://readfree.me/")
+
+                    sendMsgBack("readfree", {
+                        type: "check"
+                    }, function (resp) {
+
+                    });
+                }
+            }
+        });
+    }();
 });

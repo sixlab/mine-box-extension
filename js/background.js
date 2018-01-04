@@ -20,19 +20,58 @@
 // 接受从 content 的 chrome.runtime.sendMessage 发来的消息
 chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
-         if(request.topic === "btn03"){
-             var tabId = sender.tab.id;
-
-             chrome.bookmarks.getTree(function (tree) {
-                 chrome.tabs.sendMessage(tabId, tree, function (respone) {
-
-                 });
-             });
-
-             sendResponse(sender);
-         }
+        let topic = request.topic;
+        switch (topic){
+            case "btn03":
+                btn03(request, sender, sendResponse);
+                break;
+            case "readfree":
+                readfree(request, sender, sendResponse);
+                break;
+        }
     }
 );
+
+function btn03(request, sender, sendResponse) {
+    var tabId = sender.tab.id;
+
+    chrome.bookmarks.getTree(function (tree) {
+        chrome.tabs.sendMessage(tabId, tree, function (respone) {
+
+        });
+    });
+
+    sendResponse("ok");
+}
+
+function readfree(request, sender, sendResponse) {
+    let today = new Date();
+    let text = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+
+    switch (request.message.type){
+        case "daily":
+            let checkDate = localStorage.getItem("checkDate");
+            if (text != checkDate) {
+                sendResponse({
+                    success: false,
+                    checkDate: checkDate
+                });
+            } else {
+                sendResponse({
+                    success: true,
+                    checkDate: checkDate
+                });
+            }
+            break;
+        case "check":
+            localStorage.setItem("checkDate", text);
+            sendResponse({
+                success: true,
+                checkDate: text
+            });
+            break;
+    }
+}
 
 // chrome.extension.onMessage.addListener(
 //     function (message, sender, sendResponse) {
