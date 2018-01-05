@@ -14,9 +14,9 @@ $(function () {
         "        <div><i class='iconfont icon-daikaifa'></i></div>" +
         "        <div>发消息</div>" +
         "    </li>" +
-        "    <li class='me-sudoku-item'>" +
+        "    <li class='me-sudoku-item' id='me-go-readfree'>" +
         "        <div><i class='iconfont icon-daikaifa'></i></div>" +
-        "        <div>E-mail</div>" +
+        "        <div>Readfree</div>" +
         "    </li>" +
         "    <li class='me-sudoku-item'>" +
         "        <div><i class='iconfont icon-daikaifa'></i></div>" +
@@ -163,6 +163,10 @@ $(function () {
                 });
             }
 
+            if (this.id === "me-go-readfree") {
+                window.open("http://readfree.me/");
+            }
+
             $("#me-sudoku").hide();
         });
     }();
@@ -175,7 +179,7 @@ $(function () {
             if(! resp.success){
                 let result = confirm("今天 readfree 还没有签到");
                 if(result){
-                    window.open("http://readfree.me/")
+                    window.open("http://readfree.me/");
 
                     sendMsgBack("readfree", {
                         type: "check"
