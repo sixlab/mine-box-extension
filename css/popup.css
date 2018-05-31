@@ -19,14 +19,14 @@ body h1 {
 .left-menu{
     display: inline-block;
     vertical-align: top;
-    height: 440px;
+    height: 426px;
 }
 
 .right-content{
     display: inline-block;
     vertical-align: top;
-    height: 440px;
-    width: 520px;
+    height: 426px;
+    width: 528px;
     background-color: #FFF;
     overflow: scroll;
 }

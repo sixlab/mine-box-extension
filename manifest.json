@@ -1,20 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "Mine Extension",
+  "name": "万能辅助工具",
   "description": "Numberian's Extension",
-  "version": "1.0",
+  "version": "1.0.0",
   "browser_action": {
     "default_icon": {
       "32": "img/favicon32.png",
       "64": "img/favicon64.png",
       "128": "img/favicon128.png"
     },
-    "default_title": "扩展管理",
+    "default_title": "万能辅助工具",
     "default_popup": "html/popup.html"
   },
   "options_page": "html/options.html",
   "permissions": [
-    "https://api.sixlab.cn/",
+    "contextMenus",
     "management",
     "tabs",
     "bookmarks",

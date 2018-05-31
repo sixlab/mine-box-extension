@@ -58,7 +58,7 @@
     margin: 0;
     background: #FFF;
     /*height: 100px;*/
-    height: 440px;
+    height: 426px;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -67,7 +67,7 @@
     width: 250px;
     /* == */
 
-    overflow: scroll;
+    overflow: visible;
 }
 
 .mcd-menu li {

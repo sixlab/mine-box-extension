@@ -1,13 +1,28 @@
-//
-//
-// chrome.runtime.sendMessage(
-//     "hello",
-//     function (response) {
-//         console.log(response)
-//     }
-// );
-//
-//
+
+// 创建右键菜单
+var parent = chrome.contextMenus.create({"title": "万能辅助工具"});
+var child1 = chrome.contextMenus.create({"title": "注入jQuery", "parentId": parent, "onclick": injectJquery});
+
+function injectJquery(){
+    sendTabMsg("jquery", function(response){
+        if(response){
+            if(response.success){
+                alert("成功:" + response.message);
+            }else{
+                alert("失败:" + response.message);
+            }
+        }else{
+            alert("失败");
+        }
+    });
+}
+
+function sendTabMsg(msg, callback){
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+        chrome.tabs.sendMessage(tabs[0].id, msg, callback);
+    });
+}
+
 // chrome.extension.onMessage.addListener(
 //     function (message, sender, sendResponse) {
 //         console.log(message);

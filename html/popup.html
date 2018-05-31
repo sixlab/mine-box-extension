@@ -11,6 +11,7 @@
     <script type="text/javascript" src="../lib/jquery-3.2.1.min.js"></script>
 
     <script type="text/javascript" src="../lib/qrcode.min.js"></script>
+    <script type="text/javascript" src="../lib/llqrcode.js"></script>
     <script type="text/javascript" src="../lib/tabv.js"></script>
 
     <script type="text/javascript" src="../js/popup.js"></script>
@@ -84,11 +85,15 @@
                             <small>当前页面的二维码</small>
                         </a></li>
 
-                        <li><a href="###" me:fun="qrText" class="mcd-a"> <i class="fa fa-edit"></i> <strong>生成二维码</strong>
-                            <small>sweet home</small>
+                        <li><a href="###" me:fun="replaceHtml" me:param="#s1m2tpl" class="mcd-a"> <i class="fa fa-edit"></i> <strong>生成二维码</strong>
+                            <small>将输入的内容转换为二维码</small>
                         </a></li>
 
-                        <li><a href="###" me:fun="goIndex" class="mcd-a"> <i class="fa fa-edit"></i> <strong>首页</strong>
+                        <li><a href="###" me:fun="replaceHtml" me:param="#s1m3tpl" class="mcd-a"> <i class="fa fa-edit"></i> <strong>解析二维码</strong>
+                            <small>解析二维码的内容</small>
+                        </a></li>
+
+                        <li><a href="###" class="mcd-a"> <i class="fa fa-edit"></i> <strong>About us</strong>
                             <small>sweet home</small>
                         </a></li>
 
@@ -97,14 +102,6 @@
                         </a></li>
 
                         <li><a href="###" class="mcd-a"> <i class="fa fa-edit"></i> <strong>About us</strong>
-                            <small>sweet home</small>
-                        </a></li>
-
-                        <li><a href="###" class="mcd-a"> <i class="fa fa-gift"></i> <strong>Features</strong>
-                            <small>sweet home</small>
-                        </a></li>
-
-                        <li><a href="###" class="mcd-a"> <i class="fa fa-globe"></i> <strong>News</strong>
                             <small>sweet home</small>
                         </a></li>
 
@@ -130,14 +127,6 @@
                             <!--</ul>-->
                         </li>
 
-                        <li><a href="###" class="mcd-a"> <i class="fa fa-picture-o"></i> <strong>Portfolio</strong>
-                            <small>sweet home</small>
-                        </a></li>
-
-                        <li><a href="###" class="mcd-a"> <i class="fa fa-envelope-o"></i> <strong>Contacts</strong>
-                            <small>drop a line</small>
-                        </a></li>
-
                         <!--<li class="float"><a class="search">-->
                             <!--<input type="text" value="search ...">-->
                             <!--<button><i class="fa fa-search"></i></button>-->
@@ -146,7 +135,7 @@
                 </nav>
 
                 <div class="right-content" id="tab1-content">
-
+                    
                 </div>
             </div>
         </section>
@@ -167,6 +156,27 @@
             <a href="options.html" target="_blank">设置</a>
         </section>
     </div>
+
+    <script type="text/template" id="s1m1tpl">
+        <div id='s1m1div' style="width: 256px;margin: 10px auto;"/>
+        <div id='s1m1desc' style="text-align:center;"/>
+    </script>
+
+    <script type="text/template" id="s1m2tpl">
+        <div style="height: 40px;line-height: 40px;text-align: center;">
+            <input id='s1m2input' style="width:300px;height:20px;"/>
+            <button id='s1m2btn'>生成二维码</button>
+        </div>
+        <div id='s1m2div' style="width: 256px;margin: 0 auto;margin-top: 50px;"/>
+    </script>
+
+    <script type="text/template" id="s1m3tpl">
+        <div style="height: 40px;line-height: 40px;text-align: center;">
+            <input id='s1m3input' type="file" style="width:300px;height:20px;"/>
+            <button id='s1m3btn'>解析二维码</button>
+        </div>
+        <div id='s1m3div' style="width: 256px;margin: 0 auto;margin-top: 50px;"/>
+    </script>
 </div>
 
 </body>
