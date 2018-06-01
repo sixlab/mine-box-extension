@@ -63,22 +63,12 @@ $(function () {
 	    return url ;
 	}
 
-    var init = false;
-    $(document).on("click","#s1m3input",function(){
-        if(!init){
-            $("#s1m3input").change(function (obj){
-                debugger;
-                decodeQRIMG = obj.files.item(0);
-            });
-        }
-    });
-
     $(document).on("click","#s1m3btn",function(){
+        let decodeQRIMG = $("#s1m3input")[0].files[0];
         let image = getObjectURL(decodeQRIMG);
         qrcode.decode(image);
         qrcode.callback = function(imgMsg){
-            debugger;
-            fn(imgMsg,url);
+            $("#s1m3div").text(imgMsg);
         }
     });
 });

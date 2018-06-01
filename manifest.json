@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "万能辅助工具",
   "description": "Numberian's Extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "browser_action": {
     "default_icon": {
       "32": "img/favicon32.png",
