@@ -40,9 +40,9 @@ chrome.runtime.onMessage.addListener(
             case "btn03":
                 btn03(request, sender, sendResponse);
                 break;
-            case "readfree":
-                readfree(request, sender, sendResponse);
-                break;
+            // case "readfree":
+            //     readfree(request, sender, sendResponse);
+            //     break;
         }
     }
 );
@@ -59,34 +59,34 @@ function btn03(request, sender, sendResponse) {
     sendResponse("ok");
 }
 
-function readfree(request, sender, sendResponse) {
-    let today = new Date();
-    let text = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-
-    switch (request.message.type){
-        case "daily":
-            let checkDate = localStorage.getItem("checkDate");
-            if (text != checkDate) {
-                sendResponse({
-                    success: false,
-                    checkDate: checkDate
-                });
-            } else {
-                sendResponse({
-                    success: true,
-                    checkDate: checkDate
-                });
-            }
-            break;
-        case "check":
-            localStorage.setItem("checkDate", text);
-            sendResponse({
-                success: true,
-                checkDate: text
-            });
-            break;
-    }
-}
+// function readfree(request, sender, sendResponse) {
+//     let today = new Date();
+//     let text = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
+//
+//     switch (request.message.type){
+//         case "daily":
+//             let checkDate = localStorage.getItem("checkDate");
+//             if (text != checkDate) {
+//                 sendResponse({
+//                     success: false,
+//                     checkDate: checkDate
+//                 });
+//             } else {
+//                 sendResponse({
+//                     success: true,
+//                     checkDate: checkDate
+//                 });
+//             }
+//             break;
+//         case "check":
+//             localStorage.setItem("checkDate", text);
+//             sendResponse({
+//                 success: true,
+//                 checkDate: text
+//             });
+//             break;
+//     }
+// }
 
 // chrome.extension.onMessage.addListener(
 //     function (message, sender, sendResponse) {
